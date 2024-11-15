@@ -1,35 +1,35 @@
 # Управление пользователями
 Создание пользователей user1 и user2.
-```md
+```
 useradd user1; useradd user2; cat /etc/passwd
 ```
 ![1.png](/solutions/task2_1/screenshots/1.png)
 
 Изменение командной оболочки для user2.
-```md
+```
 usermod -s /bin/sh user2; cat /etc/passwd
 ```
 ![2.png](/solutions/task2_1/screenshots/2.png)
 
 Смена паролей для обоих пользователей.
-```md
+```
 passwd user1; passwd user2
 ```
 Добавление пользователя user1 в группу администраторов.
-```md
+```
 usermod -aG wheel user1; id user1
 ```
 ![3.png](/solutions/task2_1/screenshots/3.png)
 
 Добавление пользователя user2 в группу пользователя user1.
-```md
+```
 usermod -aG user1 user2; id user2
 ```
 ![4.png](/solutions/task2_1/screenshots/4.png)
 
 Права доступа предназначены для ограничения возможных действий отдельных групп пользователей.
 Вывод прав доступа на файлы в директории пользователя (первый столбец).
-```md
+```
 ls -la
 ```
 ![5.png](/solutions/task2_1/screenshots/5.png)
@@ -42,13 +42,13 @@ ls -la
 третья для всех остальных пользователей операционной системы.
 Символ "-" перед перечислением прав доступа означает, что элемент является файлом,
 а символ "d" означает, что элемент является каталогом.
-```md
+```
 touch file; chmod 777 file; ls -l
 ```
 ![6.png](/solutions/task2_1/screenshots/6.png)
 
 Смена владельца файла и группы владельца на user1 и wheel соответственно.
-```md
+```
 chown user1 file; chgrp wheel file; ls -l
 ```
 ![9.png](/solutions/task2_1/screenshots/9.png)
@@ -57,7 +57,7 @@ chown user1 file; chgrp wheel file; ls -l
 Чтобы выполнить команду от имени администратора,
 перед ней необходимо прописать команду sudo.
 В Linux у суперпользователя по умолчанию есть ограничения
-на выполнения ряда комманд, например, удаления пользователя.
+на выполнения ряда команд, например, удаления пользователя.
 По умолчанию только root доступно выполнение любых команд.
 
 Чтобы позволить группе администраторов выполнять любые команды,
@@ -68,12 +68,12 @@ chown user1 file; chgrp wheel file; ls -l
 ![7.png](/solutions/task2_1/screenshots/7.png)
 
 Затем сохранить файл и выйти из него. Теперь нужно зайти под пользователем user1.
-```md
+```
 su - user1
 ```
 И удалить пользователя user2 с помощью команды sudo.
 Флаг -r также удалит домашний каталог и почтовый ящик пользователя.
-```md
+```
 sudo userdel -r user2; cat /etc/passwd
 ```
 ![8.png](/solutions/task2_1/screenshots/8.png)
