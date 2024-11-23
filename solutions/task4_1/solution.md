@@ -50,7 +50,7 @@ echo
 echo "Перемещение файла во вторую подпапку"
 mv file1 ../subfolder2
 pwd
-if [[ !$(ls) ]]; then
+if [ !$(ls) ]; then
 echo "Папка пуста"
 fi
 cd ../subfolder2
