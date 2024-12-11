@@ -4,7 +4,7 @@
 ```
 usermod -s /sbin/nologin user1
 ```
-![1.png](/solutions/task2_2/screenshots/1.png)
+![1.png](/solutions/Users-2/screenshots/1.png)
 
 Блокировка пароля пользователя user1 с помощью команды `passwd -l user1`.
 Данная команда добавляет символ `!` в начало хэша пароля пользователя,
@@ -13,7 +13,7 @@ usermod -s /sbin/nologin user1
 ```
 passwd -l user1; cat /etc/tcb/user1/shadow
 ```
-![2.png](/solutions/task2_2/screenshots/2.png)
+![2.png](/solutions/Users-2/screenshots/2.png)
 
 При этом от пользователя root по-прежнему можно войти в систему под user1,
 так как для root при входе в систему пароли пользователей не запрашиваются.
@@ -22,18 +22,18 @@ passwd -l user1; cat /etc/tcb/user1/shadow
 ```
 passwd -u user1; cat /etc/tcb/user1/shadow
 ```
-![3.png](/solutions/task2_2/screenshots/3.png)
+![3.png](/solutions/Users-2/screenshots/3.png)
 
 Блокировка учетной записи пользователя user1.
 ```
 usermod -L user1
 ```
-![4.png](/solutions/task2_2/screenshots/4.png)
+![4.png](/solutions/Users-2/screenshots/4.png)
 
 Разблокировка учетной записи пользователя user1.
 ```
 usermod -U user1
 ```
-![5.png](/solutions/task2_2/screenshots/5.png)
+![5.png](/solutions/Users-2/screenshots/5.png)
 
 Создание пользователей с одинаковыми именами невозможно.
