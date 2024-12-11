@@ -11,67 +11,67 @@
 ```
 cat /etc/fstab
 ```
-![1.png](/solutions/task3_3/screenshots/1.png)
+![1.png](/solutions/Files-3/screenshots/1.png)
 
 Добавление в виртуальную машину еще одного диска.
-![2.png](/solutions/task3_3/screenshots/2.png)
+![2.png](/solutions/Files-3/screenshots/2.png)
 
 Вывод информации о дисках, которые видит система.
 ```
 lsblk
 ```
-![3.png](/solutions/task3_3/screenshots/3.png)
+![3.png](/solutions/Files-3/screenshots/3.png)
 
 Создание таблицы разделов и нового раздела на добавленном диске.
 ```
 fdisk /dev/sdb
 ```
-![4.png](/solutions/task3_3/screenshots/4.png)
+![4.png](/solutions/Files-3/screenshots/4.png)
 
 Повторный вывод информации о дисках, чтобы удостовериться в том, что новый раздел был добавлен.
 ```
 lsblk
 ```
-![5.png](/solutions/task3_3/screenshots/5.png)
+![5.png](/solutions/Files-3/screenshots/5.png)
 
 Создание файловой системы ext4 на новом разделе добавленного диска.
 ```
 mkfs -t ext4 /dev/sdb1
 ```
-![6.png](/solutions/task3_3/screenshots/6.png)
+![6.png](/solutions/Files-3/screenshots/6.png)
 
 Монтирование подготовленного блочного устройства.
 ```
 mkdir /mnt/test; mount /dev/sdb1 /mnt/test; lsblk
 ```
-![7.png](/solutions/task3_3/screenshots/7.png)
+![7.png](/solutions/Files-3/screenshots/7.png)
 
 Переход в каталог, куда примонтирован диск, и создание нескольких файлов.
 ```
 cd /mnt/test; touch file1 file2 file3; ls
 ```
-![8.png](/solutions/task3_3/screenshots/8.png)
+![8.png](/solutions/Files-3/screenshots/8.png)
 
 Размонтирование диска и проверка сохранности файлов в каталоге.
 ```
 umount /mnt/test; cd /mnt/test; ls -l
 ```
-![9.png](/solutions/task3_3/screenshots/9.png)
+![9.png](/solutions/Files-3/screenshots/9.png)
 
 Просмотр `UUID` добавленного диска.
 ```
 blkid
 ```
-![10.png](/solutions/task3_3/screenshots/10.png)
+![10.png](/solutions/Files-3/screenshots/10.png)
 
 Добавление диска в `fstab`, чтобы он автоматически подключался в файловую систему при запуске.
 ```
 nano /etc/fstab
 ```
-![11.png](/solutions/task3_3/screenshots/11.png)
+![11.png](/solutions/Files-3/screenshots/11.png)
 
 Повторный вывод информации о дисках, чтобы удостовериться в том, что диск успешно примонтирован после перезапуска системы.
 ```
 lsblk
 ```
-![12.png](/solutions/task3_3/screenshots/12.png)
+![12.png](/solutions/Files-3/screenshots/12.png)
