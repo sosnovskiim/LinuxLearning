@@ -4,21 +4,21 @@
 ```
 ls -l /
 ```
-![1.png](/solutions/task3_2/screenshots/1.png)
+![1.png](/solutions/Files-2/screenshots/1.png)
 
 ## Домашние каталоги пользователей Linux
 Домашние каталоги пользователей системы хранятся в каталоге /home.
 ```
 ls -l /home
 ```
-![2.png](/solutions/task3_2/screenshots/2.png)
+![2.png](/solutions/Files-2/screenshots/2.png)
 
 ## Домашний каталог суперпользователя Linux
 Домашним каталогом суперпользователя является /root.
 ```
 ls -la /root
 ```
-![3.png](/solutions/task3_2/screenshots/3.png)
+![3.png](/solutions/Files-2/screenshots/3.png)
 
 ## Основные конфигурационные файлы Linux
 Основные файлы конфигурации системы и установленных программ хранятся в каталоге /etc.
