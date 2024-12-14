@@ -3,13 +3,13 @@
 ```
 useradd user1; useradd user2; cat /etc/passwd
 ```
-![1.png](/solutions/task2_1/screenshots/1.png)
+![1.png](/solutions/Users-1/screenshots/1.png)
 
 Изменение командной оболочки для user2.
 ```
 usermod -s /bin/sh user2; cat /etc/passwd
 ```
-![2.png](/solutions/task2_1/screenshots/2.png)
+![2.png](/solutions/Users-1/screenshots/2.png)
 
 Смена паролей для обоих пользователей.
 ```
@@ -19,20 +19,20 @@ passwd user1; passwd user2
 ```
 usermod -aG wheel user1; id user1
 ```
-![3.png](/solutions/task2_1/screenshots/3.png)
+![3.png](/solutions/Users-1/screenshots/3.png)
 
 Добавление пользователя user2 в группу пользователя user1.
 ```
 usermod -aG user1 user2; id user2
 ```
-![4.png](/solutions/task2_1/screenshots/4.png)
+![4.png](/solutions/Users-1/screenshots/4.png)
 
 Права доступа предназначены для ограничения возможных действий отдельных групп пользователей.
 Вывод прав доступа на файлы в директории пользователя (первый столбец).
 ```
 ls -la
 ```
-![5.png](/solutions/task2_1/screenshots/5.png)
+![5.png](/solutions/Users-1/screenshots/5.png)
 
 Создание файла и смена его прав доступа на всевозможные для всех пользователей.
 Числовые значения разрешения на чтение (4), запись (2) и выполнение (1)
@@ -45,13 +45,13 @@ ls -la
 ```
 touch file; chmod 777 file; ls -l
 ```
-![6.png](/solutions/task2_1/screenshots/6.png)
+![6.png](/solutions/Users-1/screenshots/6.png)
 
 Смена владельца файла и группы владельца на user1 и wheel соответственно.
 ```
 chown user1 file; chgrp wheel file; ls -l
 ```
-![9.png](/solutions/task2_1/screenshots/9.png)
+![9.png](/solutions/Users-1/screenshots/9.png)
 
 Встроенная учетная запись администратора называется root.
 Чтобы выполнить команду от имени администратора,
@@ -65,7 +65,7 @@ chown user1 file; chgrp wheel file; ls -l
 Необходимо найти и раскомментировать строку, позволяющую пользователям
 из группы администраторов выполнять любые команды, притом без ввода пароля.
 
-![7.png](/solutions/task2_1/screenshots/7.png)
+![7.png](/solutions/Users-1/screenshots/7.png)
 
 Затем сохранить файл и выйти из него. Теперь нужно зайти под пользователем user1.
 ```
@@ -76,4 +76,4 @@ su - user1
 ```
 sudo userdel -r user2; cat /etc/passwd
 ```
-![8.png](/solutions/task2_1/screenshots/8.png)
+![8.png](/solutions/Users-1/screenshots/8.png)

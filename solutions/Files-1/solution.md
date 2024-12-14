@@ -42,15 +42,15 @@ mkdir /mnt/test; mount /dev/sda1 /mnt/test
 ```
 mount | grep proc
 ```
-![1.png](/solutions/task3_1/screenshots/1.png)
+![1.png](/solutions/Files-1/screenshots/1.png)
 ```
 mount | grep tmpfs
 ```
-![2.png](/solutions/task3_1/screenshots/2.png)
+![2.png](/solutions/Files-1/screenshots/2.png)
 ```
 mount | grep sysfs
 ```
-![3.png](/solutions/task3_1/screenshots/3.png)
+![3.png](/solutions/Files-1/screenshots/3.png)
 
 Файловая система cifs не установлена по умолчанию в дистрибутиве Alt Linux.
 
