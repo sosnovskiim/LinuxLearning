@@ -8,7 +8,7 @@ ssh student
 
 Если пакет iptables не установлен, сделать это можно следующей командой.
 ```
-sudo apt-get install iptables
+apt-get install iptables
 ```
 Так как пакет уже был установлен, то с соединением по ssh все в порядке и подключаться по-прежнему можно.
 
@@ -17,12 +17,12 @@ sudo apt-get install iptables
 
 Если требуется открыть порт на сервере, то необходимо ввести следующую команду:
 ```
-sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 ```
 Указывается протокол tcp, так как именно его использует ssh.
 
 Чтобы правила iptables автоматически сохранялись после перезапуска необходимо создать пустой файл
-командой `sudo touch /etc/network/if-post-down.d/iptables` со следующим содержимым:
+командой `touch /etc/network/if-post-down.d/iptables` со следующим содержимым:
 ```
 #!/bin/sh
 touch /etc/iptables.rules
@@ -33,13 +33,13 @@ exit 0
 Данный скрипт сохраняет текущие правила iptables в файл `/etc/iptables.rules`,
 изменяет права доступа к нему в целях безопасности и выгружает текущие правила в него.
 
-Затем необходимо добавить ему флаг исполняемости командой: `sudo chmod +x /etc/network/if-post-down.d/iptables`.
+Затем необходимо добавить ему флаг исполняемости командой: `chmod +x /etc/network/if-post-down.d/iptables`.
 
 Чтобы правила iptables автоматически восстанавливались после перезапуска необходимо создать пустой файл
-командой `sudo touch /etc/network/if-pre-up.d/iptables` со следующим содержимым:
+командой `touch /etc/network/if-pre-up.d/iptables` со следующим содержимым:
 ```
 #!/bin/sh
 iptables-restore < /etc/iptables.rules
 exit 0
 ```
-И добавить ему флаг исполняемости командой: `sudo chmod +x /etc/network/if-pre-up.d/iptables`.
+И добавить ему флаг исполняемости командой: `chmod +x /etc/network/if-pre-up.d/iptables`.
